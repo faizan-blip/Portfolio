@@ -1,38 +1,87 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+    font-family: 'Belanosima', sans-serif !important;
+    /* overflow-x: hidden; */
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+html{
+    scroll-behavior: smooth;
+  
+}
+@keyframes floating {
+    0% {
+        transform: scale(2);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(2.5);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(2);
+        opacity: 1;
+      }
+    }
+  
+  .floating-element {
+    animation: floating 2s ease-in-out infinite;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  ::-webkit-scrollbar{
+    width: 3px;
   }
-  to {
-    transform: rotate(360deg);
+
+  ::-webkit-scrollbar-thumb{
+    background:#9D00FF;
   }
-}
+  .hover , .hover1 , .hover2 , .hover3{
+      transition: all 0.5s ease-out;
+  }
+  .hover:hover{
+   color: #9D00FF!important;
+  }
+  .hover2:hover{
+    border-color: #9D00FF;
+  }
+  .hover1:hover {background-color: #9D00FF!important;}
+
+  .hover3:hover{
+    background-color: #9D00FF!important;
+    cursor: pointer;
+  }
+  .hover1{
+    animation:blink 2s ease-in-out infinite;
+  }
+  @keyframes blink{
+    0% {
+       background-color: #494949;
+   
+      }
+      50% {
+       background-color: #9D00FF;
+      
+      }
+      100% {
+      background-color: #494949;
+     
+      }
+    }
+    
+    input{
+      font-size: 20px;
+      color: #494949;
+    }
+    :-ms-input-placeholder{
+      color: #494949!important;
+      padding: 0 0.2em;
+      opacity: 0.7;
+    }
+
+    textarea::placeholder {
+      color: #494949;
+      padding: 0.2em 0.2em;
+    }
+    textarea{
+      font-size: 20px;
+      color: #494949;
+    }
