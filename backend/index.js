@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000
 app.use(cors({
     origin: 'https://faizanak-portfolio.netlify.app',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'phone'],
   }));
   
 app.use(express.json())
