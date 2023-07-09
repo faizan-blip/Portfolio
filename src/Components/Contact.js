@@ -1,12 +1,11 @@
-import React , {useState , useRef}from 'react'
+import React , {useState }from 'react'
 import { Box ,Button, Divider, Typography} from '@mui/material'
 import { AiOutlineMessage} from 'react-icons/ai'
 import { motion } from 'framer-motion'
 import {  Toaster, toast } from 'react-hot-toast'
 import emailValidator from 'email-validator';
-import emailjs from '@emailjs/browser';
+import axios from 'axios'
 export default function Contact() {
-  const form = useRef();
   const [show , setShow] = useState(false)
 const handleScroll = () => {
   const targetElement = document.getElementById('contact'); 
@@ -31,7 +30,7 @@ const [msg , setMsg] = useState('')
 
 
 
-const submit = (e)=>{
+const submit = async(e)=>{
   e.preventDefault();
   if(!name || !email || !subject || !msg){
     toast.error("Fill up the Fields")
@@ -44,20 +43,27 @@ const submit = (e)=>{
   } else if(msg.length < 2){
     toast.error("Write a appropriate message")
   } else{
-    toast.success("Response Send ...")
-    
-emailjs.sendForm('service_2ge3wo9', 'template_7ogmxfb', form.current, 'B3Yv7cJwgG_7-q46l')
-.then((result) => {
-    console.log(result.text);
-}, (error) => {
-    console.log(error.text);
-});
-    setName('')
-    setEmail('')
-    setPhone('')
-    setSubject('')
-    setMsg('')
-  }
+    try{
+      const response = await axios.post('http://localhost:4000/api/contact/createdata' , {
+        name: name,
+        email:email,
+        phone:phone,
+        subject:subject,
+        message:msg
+       })
+       console.log(response.data);
+       toast.success("Send Respond ...")
+        setName('')
+        setMsg('')
+        setEmail('')
+        setPhone('')
+        setSubject('')  
+  }catch(err){
+      toast.error(err.message)
+  } 
+
+    }
+       
  
 }
 
@@ -99,13 +105,12 @@ emailjs.sendForm('service_2ge3wo9', 'template_7ogmxfb', form.current, 'B3Yv7cJwg
           animate={{opacity:1 , y:0}}
           transition={{duration:1 , ease:"easeOut", delay:0.4}}
           >
-             <form  ref={form}  onClick={submit}>
   <Box sx={{display:"flex" , flexDirection:"column" , width:{lg:"85%" , xs:"100%"} , gap:"2em"}}>
    
       <Box sx={{display:"flex" , justifyContent:"space-between" , gap:"2em" , flexWrap:{lg:"nowrap" , xs:"wrap"}}}>
          <Box sx={{display:"flex" , flexDirection:"column" , width:{lg:"50%", xs:"100%"} , gap:"0.5em"}}>
           <Typography color='#fff' sx={{fontSize:"18px" , fontWeight:"500"}}>FULL NAME </Typography>
-           <input name="from_name" onChange={(e)=> setName(e.target.value)} value={name} placeholder='Your Full Name' type="text" style={{border:"none"  , height:"3em" , width:"100%",background:"none" , boxShadow:"0px 4px 4px rgba(0, 0, 0, 0.25)"}} />
+           <input name="name" onChange={(e)=> setName(e.target.value)} value={name} placeholder='Your Full Name' type="text" style={{border:"none"  , height:"3em" , width:"100%",background:"none" , boxShadow:"0px 4px 4px rgba(0, 0, 0, 0.25)"}} />
          </Box>
          <Box sx={{display:"flex" , flexDirection:"column",  width:{lg:"50%", xs:"100%"}, gap:"0.5em"}}>
           <Typography color='#fff' sx={{fontSize:"18px" , fontWeight:"500"}}>EMAIL </Typography>
@@ -128,9 +133,8 @@ emailjs.sendForm('service_2ge3wo9', 'template_7ogmxfb', form.current, 'B3Yv7cJwg
          </Box>
 
          <Divider sx={{width:"100%" , borderColor:"#494949" , marginTop:"1em"}}/>
-         <Button type='submit' variant='contained' sx={{alignSelf:"flex-start" , marginTop:"0.5em" , marginBottom:"1em" , borderRadius:"25px" , background:"#9200ff !important" , width:"11em" , fontSize:"20px"}}>SEND MESSAGE</Button>
+         <Button onClick={submit} variant='contained' sx={{alignSelf:"flex-start" , marginTop:"0.5em" , marginBottom:"1em" , borderRadius:"25px" , background:"#9200ff !important" , width:"11em" , fontSize:"20px"}}>SEND MESSAGE</Button>
   </Box>
-  </form>
   </motion.div>
 }
   </Box>
