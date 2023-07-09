@@ -59,7 +59,7 @@ const submit = async(e)=>{
         setPhone('')
         setSubject('')  
   }catch(err){
-      toast.error(err.message)
+
   } 
 
     }
@@ -120,7 +120,7 @@ const submit = async(e)=>{
       <Box sx={{display:"flex" , justifyContent:"space-between" , gap:"2em" , flexWrap:{lg:"nowrap" , xs:"wrap"}}}>
          <Box sx={{display:"flex" , flexDirection:"column" ,  width:{lg:"50%", xs:"100%"} , gap:"0.5em"}}>
           <Typography color='#fff' sx={{fontSize:"18px" , fontWeight:"500"}}>PHONE <span style={{color:"#494949" , fontSize:"16px"}}>(optional)</span> </Typography>
-           <input onChange={(e)=> setPhone(e.target.value)} value={phone} placeholder='Your Full Name' type="text" style={{border:"none"  , height:"3em" , width:"100%",background:"none" , boxShadow:"0px 4px 4px rgba(0, 0, 0, 0.25)"}} />
+           <input onChange={(e)=> setPhone(e.target.value)} value={phone} placeholder='Your Phone number' type="text" style={{border:"none"  , height:"3em" , width:"100%",background:"none" , boxShadow:"0px 4px 4px rgba(0, 0, 0, 0.25)"}} />
          </Box>
          <Box sx={{display:"flex" , flexDirection:"column",  width:{lg:"50%", xs:"100%"} , gap:"0.5em"}}>
           <Typography color='#fff' sx={{fontSize:"18px" , fontWeight:"500"}}>SUBJECT </Typography>
