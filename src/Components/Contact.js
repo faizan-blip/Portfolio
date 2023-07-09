@@ -59,9 +59,8 @@ const submit = async(e)=>{
         setPhone('')
         setSubject('')  
   }catch(err){
-
+          toast.error(err.message)
   } 
-
     }
        
  
