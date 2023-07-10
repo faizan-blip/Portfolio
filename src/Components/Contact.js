@@ -28,46 +28,49 @@ const [phone , setPhone] = useState('')
 const [msg , setMsg] = useState('')
 
 
-
-
-const submit = async(e)=>{
+const submit = async (e) => {
   e.preventDefault();
-  if(!name || !email || !subject || !msg){
-    toast.error("Fill up the Fields")
-  } else if(name.length < 5){
-    toast.error("Enter a valid name")
+  if (!name || !email || !subject || !msg) {
+    toast.error("Fill up the Fields");
+  } else if (name.length < 5) {
+    toast.error("Enter a valid name");
   } else if (!emailValidator.validate(email)) {
-    toast.error('Enter a valid email address');
-  }  else if(phone.length < 10){
-    toast.error("Enter a valid phone number")
-  } else if(msg.length < 2){
-    toast.error("Write a appropriate message")
-  } else{
-    try{
-      const response = await axios.post('https://portfolio-bckend.vercel.app/api/contact/createdata', {
-  name: name,
-  email: email,
-  phone: phone,
-  subject: subject,
-  message: msg
-}, {
-  crossDomain: true
-});
+    toast.error("Enter a valid email address");
+  } else if (phone.length < 10) {
+    toast.error("Enter a valid phone number");
+  } else if (msg.length < 2) {
+    toast.error("Write an appropriate message");
+  } else {
+    try {
+      const response = await axios.post(
+        'https://cors-anywhere.herokuapp.com/https://portfolio-bckend.vercel.app/api/contact/createdata',
+        {
+          name: name,
+          email: email,
+          phone: phone,
+          subject: subject,
+          message: msg,
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
 
-       console.log(response.data);
-       toast.success("Send Respond ...")
-        setName('')
-        setMsg('')
-        setEmail('')
-        setPhone('')
-        setSubject('')  
-  }catch(err){
-          toast.error(err.message)
-  } 
+      console.log(response.data);
+      toast.success("Send Respond ...");
+      setName('');
+      setMsg('');
+      setEmail('');
+      setPhone('');
+      setSubject('');
+    } catch (err) {
+      toast.error(err.message);
     }
-       
- 
-}
+  }
+};
+
   return (
     <div id='contact'>
       <Toaster toastOptions={{style:{
