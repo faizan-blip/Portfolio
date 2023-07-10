@@ -97,4 +97,9 @@ html{
     position: absolute;
     top: 50%!important;
   }
+  .meta{
+    position: absolute;
+    left: 5%!important;
+    top: 6%!important;
+  }
 }
