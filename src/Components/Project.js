@@ -86,9 +86,9 @@ window.addEventListener('scroll', handleScroll);
     const url = 'https://meta-work.netlify.app/';
     window.open(url, '_blank');
   }}  className='hover3' sx={{minWidth:"300px" , height:"17em" , borderRadius:"18px" , flexGrow:"1" , position:"relative", background:"none"}}>
-        <img className='meta' src={meta} alt="" width={300} style={{position:"absolute" , top:"50%" , left:"50%" , transform:"translate(-50% , -50%)"}} />
-        <Typography sx={{position:"absolute"  , left:"10%" , top:"10%" , fontSize:"20px" , color:"#fff"}}>Meta-Work</Typography>
-        <Fab className='hover3'  variant='contained' sx={{position:"absolute" , bottom:"10%" , right:"10%" , background:"none !important", color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><FaReact/></Fab>
+        <img  src={meta} alt="" width={300} style={{position:"absolute" , top:"50%" , left:"50%" , transform:"translate(-50% , -50%)"}} />
+        <Typography className='meta' sx={{position:"absolute"  , left:"10%" , top:"10%" , fontSize:"20px" , color:"#fff"}}>Meta-Work</Typography>
+        <Fab  className='hover3'  variant='contained' sx={{position:"absolute" , bottom:"10%" , right:"10%" , background:"none !important", color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><FaReact/></Fab>
         <Fab className='hover3'  variant='contained' sx={{position:"absolute" , bottom:"10%" , right:"20%" ,  background:"none !important" , color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><SiMui/></Fab>
         <Fab  className='hover3' variant='contained' sx={{position:"absolute" , bottom:"10%" , right:"30%" ,  background:"none !important" , color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><SiJavascript/></Fab>
        </Paper> 
