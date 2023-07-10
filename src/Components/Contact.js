@@ -44,15 +44,22 @@ const submit = async(e)=>{
     toast.error("Write a appropriate message")
   } else{
     try{
-      const response = await axios.post('https://portfolio-bckend.vercel.app/api/contact/createdata', {
-  name: name,
-  email: email,
-  phone: phone,
-  subject: subject,
-  message: msg
-}, {
-  crossDomain: true
-});
+      const response = await axios({
+        url: 'https://portfolio-bckend.vercel.app/api/contact/createdata',
+        method: 'POST',
+        headers: {
+          'Access-Control-Allow-Origin': 'https://faizanak-portfolio.netlify.app',
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        data: {
+          name: name,
+          email: email,
+          phone: phone,
+          subject: subject,
+          message: msg
+        }
+      });
 
        console.log(response.data);
        toast.success("Send Respond ...")
