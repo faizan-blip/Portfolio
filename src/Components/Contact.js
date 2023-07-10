@@ -42,21 +42,21 @@ const submit = async (e) => {
     toast.error("Write an appropriate message");
   } else {
     try {
-      const response = await axios.post(
-        'https://cors-anywhere.herokuapp.com/https://portfolio-bckend.vercel.app/api/contact/createdata',
-        {
+      const response = await axios({
+        url: 'https://portfolio-bckend.vercel.app/api/contact/createdata',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: {
           name: name,
           email: email,
           phone: phone,
           subject: subject,
-          message: msg,
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          message: msg
         }
-      );
+      });
+      
 
       console.log(response.data);
       toast.success("Send Respond ...");
