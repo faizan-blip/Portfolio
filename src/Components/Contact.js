@@ -44,7 +44,7 @@ const submit = async(e)=>{
     toast.error("Write a appropriate message")
   } else{
     try{
-      const response = await axios.post('http://localhost:4000/api/contact/createdata' , {
+      const response = await axios.post('https://portfolio-bckend.vercel.app/' , {
         name: name,
         email:email,
         phone:phone,
