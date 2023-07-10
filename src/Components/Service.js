@@ -30,7 +30,7 @@ const handleScroll = () => {
 window.addEventListener('scroll', handleScroll);
   return (
     <div id='service'>
-  <Box sx={{height:"100%" , minHeight:{lg:"100vh" , xs:"100%"}, background:"#0f0f0f" , color:"#fff" , display:"flex", width:"100%" , marginTop:{xl:"5.2em",lg:"3.5em" , xs:"0em"} , flexDirection:"column" , gap:"1.5em" , padding:{lg:"0" ,xs:"3em 0em"}}}>
+  <Box sx={{height:"100%" , minHeight:{lg:"100vh" , xs:"100%"} , color:"#fff" , display:"flex", width:"100%" , marginTop:{xl:"5.2em",lg:"3.5em" , xs:"0em"} , flexDirection:"column" , gap:"1.5em" , padding:{lg:"0" ,xs:"3em 0em"}}}>
   {
     show &&
   <motion.div 

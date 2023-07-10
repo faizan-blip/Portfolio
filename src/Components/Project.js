@@ -1,9 +1,9 @@
 import React , {useState} from 'react'
 import { Box ,Button, Fab, Paper, Skeleton, Typography} from '@mui/material'
 import {RiProjectorFill} from 'react-icons/ri'
-import ft from '../Components/Images/logo.png'
-import inn from '../Components/Images/in.png'
-import meta from '../Components/Images/meta.png'
+import ft from '../Components/Images/lets talk.png'
+import inn from '../Components/Images/HD.png'
+import meta from '../Components/Images/poster meta.png'
 import kid from '../Components/Images/LOGO (2).png'
 import {FaReact} from 'react-icons/fa'
 import {TbBrandNextjs,TbBrandFigma} from 'react-icons/tb'
@@ -53,7 +53,7 @@ window.addEventListener('scroll', handleScroll);
 {
     show &&
   <motion.div 
-          initial={{opacity:0 , x:-100}}
+          initial={{opacity:0 , x:-50}}
           animate={{opacity:1 , x:0}}
           transition={{duration:1 , ease:"easeOut" , delay:0.4}}
           >
@@ -63,19 +63,19 @@ window.addEventListener('scroll', handleScroll);
     const url = 'https://first-talk.netlify.app/';
     window.open(url, '_blank');
   }}   className='hover3'  sx={{minWidth:"300px" , height:"17em" , borderRadius:"18px" , flexGrow:"1" , position:"relative" , background:"none"}}>
-        <img src={ft} alt="" width={100} style={{position:"absolute" , top:"45%" , left:"50%" , transform:"translate(-50% , -50%)"}} />
-        <Typography sx={{position:"absolute"  , left:"10%" , top:"10%" , fontSize:"20px" , color:"#fff"}}>First-talk</Typography>
-        <Fab className='hover3'  variant='contained' sx={{position:"absolute" , bottom:"10%" , right:"10%" , background:"none !important" , color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><FaReact/></Fab>
-        <Fab className='hover3'  variant='contained' sx={{position:"absolute" , bottom:"10%" , right:"20%" , background:"none !important" , color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><SiFirebase/></Fab>
-        <Fab  className='hover3' variant='contained' sx={{position:"absolute" , bottom:"10%" , right:"30%" , background:"none !important" , color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><SiMui/></Fab>
-        <Fab  className='hover3' variant='contained' sx={{position:"absolute" , bottom:"10%" , right:"40%" , background:"none !important" , color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><SiJavascript/></Fab>
+        <img src={ft} className='ft' alt="" width={400} style={{position:"absolute" , top:"45%" , left:"50%" , transform:"translate(-50% , -50%)"}} />
+        <Typography sx={{position:"absolute"  , left:"05%" , top:"10%" , fontSize:"20px" , color:"#fff"}}>First-talk</Typography>
+        <Fab className='hover3'  variant='contained' sx={{position:"absolute" , bottom:"7%" , right:"10%" , background:"none !important" , color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><FaReact/></Fab>
+        <Fab className='hover3'  variant='contained' sx={{position:"absolute" , bottom:"7%" , right:"20%" , background:"none !important" , color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><SiFirebase/></Fab>
+        <Fab  className='hover3' variant='contained' sx={{position:"absolute" , bottom:"7%" , right:"30%" , background:"none !important" , color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><SiMui/></Fab>
+        <Fab  className='hover3' variant='contained' sx={{position:"absolute" , bottom:"7%" , right:"40%" , background:"none !important" , color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><SiJavascript/></Fab>
        </Paper>  
     <Paper onClick={() => {
     const url = 'https://hands-down.netlify.app/';
     window.open(url, '_blank');
   }}  className='hover3' sx={{minWidth:"300px" , height:"17em" , borderRadius:"18px" , flexGrow:"1" , position:"relative" , background:"none"}}>
-        <img src={inn} alt="" width={100} style={{position:"absolute" , top:"45%" , left:"50%" , transform:"translate(-50% , -50%)"}} />
-        <Typography sx={{position:"absolute"  , left:"10%" , top:"10%" , fontSize:"20px" , color:"#fff"}}>Hands-Down</Typography>
+        <img src={inn} alt="" width={250} style={{position:"absolute" , top:"45%" , left:"50%" , transform:"translate(-50% , -50%)"}} />
+        <Typography sx={{position:"absolute"  , right:"5%" , top:"5%" , fontSize:"20px" , color:"#fff"}}>Hands-Down</Typography>
         <Fab className='hover3'  variant='contained' sx={{position:"absolute" , bottom:"10%" , right:"10%" ,  background:"none !important" , color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><FaReact/></Fab>
         <Fab className='hover3'  variant='contained' sx={{position:"absolute" , bottom:"10%" , right:"20%" , background:"none !important", color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><TiCss3/></Fab>
         <Fab  className='hover3' variant='contained' sx={{position:"absolute" , bottom:"10%" , right:"30%" ,  background:"none !important", color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><SiFramer/></Fab>
@@ -86,17 +86,17 @@ window.addEventListener('scroll', handleScroll);
     const url = 'https://meta-work.netlify.app/';
     window.open(url, '_blank');
   }}  className='hover3' sx={{minWidth:"300px" , height:"17em" , borderRadius:"18px" , flexGrow:"1" , position:"relative", background:"none"}}>
-        <img src={meta} alt="" width={100} style={{position:"absolute" , top:"50%" , left:"50%" , transform:"translate(-50% , -50%)"}} />
+        <img src={meta} alt="" width={300} style={{position:"absolute" , top:"50%" , left:"50%" , transform:"translate(-50% , -50%)"}} />
         <Typography sx={{position:"absolute"  , left:"10%" , top:"10%" , fontSize:"20px" , color:"#fff"}}>Meta-Work</Typography>
         <Fab className='hover3'  variant='contained' sx={{position:"absolute" , bottom:"10%" , right:"10%" , background:"none !important", color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><FaReact/></Fab>
         <Fab className='hover3'  variant='contained' sx={{position:"absolute" , bottom:"10%" , right:"20%" ,  background:"none !important" , color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><SiMui/></Fab>
         <Fab  className='hover3' variant='contained' sx={{position:"absolute" , bottom:"10%" , right:"30%" ,  background:"none !important" , color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><SiJavascript/></Fab>
        </Paper> 
        <Paper className='hover3'  sx={{minWidth:"300px" , height:"17em" , borderRadius:"18px" , flexGrow:"1" , position:"relative", background:"none"}}>
-       <Skeleton variant='rounded' sx={{width:"200px" , height:"10em",position:"absolute" , top:"40%" , left:"50%" , transform:"translate(-50% , -50%)" , bgcolor:'#494949' }}/>
-       <Skeleton variant="circular"  sx={{position:"absolute" , bottom:"5%" , right:"10%"  , bgcolor:'#494949'  }}><Fab/></Skeleton>
-       <Skeleton variant="circular"  sx={{position:"absolute" , bottom:"5%" , right:"20%"  , bgcolor:'#494949'  }}><Fab/></Skeleton>
-       <Skeleton variant="circular"  sx={{position:"absolute" , bottom:"5%" , right:"30%"  , bgcolor:'#494949'  }}><Fab/></Skeleton>
+       <Skeleton variant='rounded' sx={{width:"200px" , height:"10em",position:"absolute" , top:"40%" , left:"50%" , transform:"translate(-50% , -50%)"  }}/>
+       <Skeleton variant="circular"  sx={{position:"absolute" , bottom:"5%" , right:"10%"  }}><Fab/></Skeleton>
+       <Skeleton variant="circular"  sx={{position:"absolute" , bottom:"5%" , right:"20%"  }}><Fab/></Skeleton>
+       <Skeleton variant="circular"  sx={{position:"absolute" , bottom:"5%" , right:"30%"    }}><Fab/></Skeleton>
        </Paper> 
   </Box>
   </motion.div>
@@ -106,7 +106,7 @@ window.addEventListener('scroll', handleScroll);
    {
     show &&
   <motion.div 
-          initial={{opacity:0 , x:-100}}
+          initial={{opacity:0 , x:-50}}
           animate={{opacity:1 , x:0}}
           transition={{duration:1 , ease:"easeOut" , delay:0.6}}
           >
@@ -124,10 +124,10 @@ window.addEventListener('scroll', handleScroll);
        </Paper>
 
        <Paper className='hover3'  sx={{minWidth:"300px" , height:"17em" , borderRadius:"18px" , flexGrow:"1" , position:"relative" , background:"none"}}>
-       <Skeleton variant='rounded' sx={{width:"200px" , height:"10em",position:"absolute" , top:"40%" , left:"50%" , transform:"translate(-50% , -50%)" , bgcolor:'#494949' }}/>
-       <Skeleton variant="circular"  sx={{position:"absolute" , bottom:"5%" , right:"10%"  , bgcolor:'#494949' }}><Fab/></Skeleton>
-       <Skeleton variant="circular"  sx={{position:"absolute" , bottom:"5%" , right:"20%"  , bgcolor:'#494949'  }}><Fab/></Skeleton>
-       <Skeleton variant="circular"  sx={{position:"absolute" , bottom:"5%" , right:"30%"  , bgcolor:'#494949'  }}><Fab/></Skeleton>
+       <Skeleton variant='rounded' sx={{width:"200px" , height:"10em",position:"absolute" , top:"40%" , left:"50%" , transform:"translate(-50% , -50%)"  }}/>
+       <Skeleton variant="circular"  sx={{position:"absolute" , bottom:"5%" , right:"10%"   }}><Fab/></Skeleton>
+       <Skeleton variant="circular"  sx={{position:"absolute" , bottom:"5%" , right:"20%"  }}><Fab/></Skeleton>
+       <Skeleton variant="circular"  sx={{position:"absolute" , bottom:"5%" , right:"30%"  }}><Fab/></Skeleton>
        </Paper> 
    </Box>
    </motion.div>

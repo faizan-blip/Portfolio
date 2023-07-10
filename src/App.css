@@ -85,3 +85,16 @@ html{
       font-size: 20px;
       color: #494949;
     }
+    
+    
+.carousel-item{
+  padding: 0 1.5em;
+}
+
+@media(max-width:450px){
+  .ft{
+    width: 300px;
+    position: absolute;
+    top: 50%!important;
+  }
+}

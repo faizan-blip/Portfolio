@@ -1,5 +1,5 @@
 import { Box, Button, Fab, IconButton, Tooltip, Typography } from '@mui/material'
-import React from 'react'
+import React , {useEffect} from 'react'
 import logo from '../Components/Images/LG.JPG.png'
 import {SiLinktree} from 'react-icons/si'
 import {AiOutlineGithub ,AiOutlineInstagram ,AiOutlineLinkedin ,AiOutlineMessage,AiOutlineHome,AiOutlineUser,} from 'react-icons/ai'
@@ -15,6 +15,7 @@ import Service from './Service'
 import Project from './Project'
 import Skill from './Skill'
 import Contact from './Contact'
+import Typed from 'typed.js'
 export default function Landing() {
 
     const logoin=[
@@ -26,14 +27,25 @@ export default function Landing() {
     const link = (url , id)=>{
         window.open(url, '_blank');
     }
-  
+    useEffect(()=>{
+      var typed = new Typed(".typed", {
+          strings: ["Full Stack Web Developer" , "UI/UX Designer" , "Programmer"],
+          typeSpeed: 100,
+          backSpeed: 50,
+          loop: true,
+          showCursor: true
+      });
+      return ()=>{
+          typed.destroy()
+      }
+    },[])
   return (
     <Box sx={{minHeight:"100vh",height:"100%" , background:"#0f0f0f" , display:"flex" , justifyContent:"space-evenly" , padding:{lg:"0 1em" , xs:"1em 1em "} , alignItems:"center" , flexWrap:{lg:"nowrap" , xs:"wrap"}}}>
          <Box sx={{width:{lg:"40%" , xs:"100%"}, height:"100%" , minWidth:{lg:"390px" , xs:"300px"}}}>
            <Box sx={{ minWidth:{sm:"300px" , xs:"auto"}, border:"1px solid white" , borderRadius:"18px", padding:"0em 1.5em", display:"flex" , flexDirection:"column" , gap:"1.5em" , paddingBottom:"2em" , position:{lg:"fixed" , xs:"inherit"}, left:"0" , top:"7%" , marginLeft:{lg:"1.2em" , xs:"0"} }}>
             <Box sx={{display:"flex" , gap:"2em" , width:"100%" , justifyContent:"space-between" , alignItems:"center"}}>
                 <Typography color='#fff'><img src={logo} alt="" width={100} /></Typography>
-                <Typography color='#fff' sx={{fontSize:{sm:"15px", xs:"13px"}}}>Full Stack Web Developer <br/> & UI/UX Designer</Typography>
+                <Typography  color='#fff' style={{fontSize:{sm:"15px", xs:"13px"} , width:"7em"}}> <span className='typed'></span> </Typography>
             </Box>
             <Box sx={{height:{lg:"200px" , sm:"500px" , xs:"200px"} ,minWidth:{sm:"300px" , xs:"auto"} , background:`url(${my})` , borderRadius:"15px" , backgroundSize:"cover" , backgroundPosition:"center" ,   filter: 'grayscale(100%)' , backgroundPositionY:"-20px" , backgroundRepeat:"no-repeat" }}>
 
