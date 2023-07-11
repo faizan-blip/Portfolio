@@ -103,3 +103,22 @@ html{
     top: 6%!important;
   }
 }
+
+.float {
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    background-color: aliceblue;
+  }
+  50% {
+    transform: translateY(-10px);
+    background-color: #9D00FF;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+

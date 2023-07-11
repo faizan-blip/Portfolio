@@ -19,10 +19,10 @@ import Typed from 'typed.js'
 export default function Landing() {
 
     const logoin=[
-          {url:'https://linktr.ee/faizan.akram' ,icon: <SiLinktree  size={20} color="#494949" />},
-         {url:'https://github.com/faizan-blip' ,icon: <AiOutlineGithub size={20} color="#494949"/>},
-        {url:'https://www.instagram.com/f_.a_.i_.z_.a_.n/' ,icon:    <AiOutlineInstagram  size={20} color="#494949" />},
-          {url:'https://www.linkedin.com/in/faizan-akram-3a5a12247/' ,icon:    <AiOutlineLinkedin size={20} color="#494949"  />}
+          {url:'https://linktr.ee/faizan.akram' ,icon: <SiLinktree  size={20} color="#494949" /> , name:"linkTree"},
+         {url:'https://github.com/faizan-blip' ,icon: <AiOutlineGithub size={20} color="#494949"/> , name:"Github"},
+        {url:'https://www.instagram.com/f_.a_.i_.z_.a_.n/' ,icon:    <AiOutlineInstagram  size={20} color="#494949" /> , name:"Instagram"},
+          {url:'https://www.linkedin.com/in/faizan-akram-3a5a12247/' ,icon:    <AiOutlineLinkedin size={20} color="#494949"  /> , name:"Linkedin"}
     ]
     const link = (url , id)=>{
         window.open(url, '_blank');
@@ -57,7 +57,9 @@ export default function Landing() {
             <Box sx={{display:"flex" , gap:"0.5em" , alignItems:"center"  , justifyContent:"center"}}>
                    {
                     logoin.map((index , idx)=>(
-                        <Fab onClick={()=> link(index.url , index)} sx={{background:"none"}} key={idx}>{index.icon}</Fab>
+                      <Tooltip title={index.name} placement='top' key={idx}> 
+                        <Fab onClick={()=> link(index.url , index)} sx={{background:"none"}} >{index.icon}</Fab>
+                        </Tooltip>
                     ))
                    }
             </Box>

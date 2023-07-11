@@ -1,7 +1,8 @@
-import { Box , Typography , Button, Divider } from '@mui/material'
+import { Box , Typography , Button, Divider, Fab, Tooltip } from '@mui/material'
 import React , {useState} from 'react'
 import {BsPersonWorkspace} from 'react-icons/bs'
 import { motion } from 'framer-motion'
+import res from '../Components/Images/resume.png'
 export default function Resume() {
     const steps = [{year:"2007 - 2019" , name:"Nirmala English School" , add:"Matriculation"},{year:"2019 - 2021" , name:"St Paul's School " , add:"Intermediate"},{year:"2021 - Present" , name:"Veer Surendra Sai University Of Technology" , add:"B-Tech"},]
     const stepsexp = [{year:"Feb(2023) - Mar(2023)" , name:"Hands-Down" , add:"Frontend Web Developer | UI/UX Designer"},{year:"Mar(2023) - Present" , name:"Graduate Us" , add:"Frontend Web Developer | UI/UX Designer"},{year:"June(2023) - Present" , name:"Wasper Tech" , add:"Frontend Web Developer"},
@@ -35,7 +36,12 @@ window.addEventListener('scroll', handleScroll);
           animate={{opacity:1 , y:0}}
           transition={{duration:1 , ease:"easeOut"}}
           >
+            <Box sx={{display:"flex" , alignItems:"center" , justifyContent:"space-between" , width:"80%"}}>
   <Button variant='outlined' sx={{borderColor:"#494949 !important" , fontWeight:"500", color:"#fff !important" , display:"flex" , alignItems:"center" , gap:"0.5em" , height:"3em" , borderRadius:"25px" , fontSize:"17px" , width:"11em"}}> <BsPersonWorkspace/> resume</Button>
+  <Tooltip title='Download Cv' placement='top'>
+  <a href={process.env.PUBLIC_URL + '/faizanakcv.pdf'} download><Fab className='float' sx={{background:"#9D00FF"}}> <img src={res} alt="resume" width={40} /> </Fab></a> 
+  </Tooltip>
+  </Box>
   </motion.div>
 }
 {
