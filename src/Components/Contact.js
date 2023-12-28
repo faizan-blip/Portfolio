@@ -42,7 +42,7 @@ const submit = async () => {
     toast.error("Write an appropriate message");
   } else {
     try {
-       const res = await axios.post('https://portfolio-backend-268y.onrender.com/api/sendmessage' , {
+       const res = await axios.post('https://portfolio-backend-4qts.onrender.com/api/sendmessage' , {
         name:name , email:email , phone:phone , subject:subject , message:msg
        })
       console.log(res.data);
