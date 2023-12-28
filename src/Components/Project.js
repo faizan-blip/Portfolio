@@ -3,11 +3,12 @@ import { Box ,Button, Fab, Paper, Skeleton, Typography} from '@mui/material'
 import {RiProjectorFill} from 'react-icons/ri'
 import ft from '../Components/Images/lets talk.png'
 import inn from '../Components/Images/HD.png'
+import xp from '../Components/Images/xp.png'
 import meta from '../Components/Images/poster meta.png'
 import kid from '../Components/Images/LOGO (2).png'
 import {FaReact} from 'react-icons/fa'
 import {TbBrandNextjs,TbBrandFigma} from 'react-icons/tb'
-import {SiExpress,SiMui,SiFirebase,SiFramer, SiJavascript} from 'react-icons/si'
+import {SiExpress,SiMui,SiFirebase,SiFramer, SiJavascript, SiMongodb} from 'react-icons/si'
 import {} from 'react-icons/bs'
 import {TiCss3} from 'react-icons/ti'
 import { motion } from 'framer-motion'
@@ -58,7 +59,18 @@ window.addEventListener('scroll', handleScroll);
           transition={{duration:1 , ease:"easeOut" , delay:0.4}}
           >
    <Box sx={{display:"flex" , gap:"1em" ,  width:{lg:"80%" , xs:"100%"} , flexWrap:"wrap"}}>
-  
+   <Paper onClick={() => {
+    const url = 'https://x-penso.vercel.app/';
+    window.open(url, '_blank');
+  }}   className='hover3'  sx={{minWidth:"300px" , height:"17em" , borderRadius:"18px" , flexGrow:"1" , position:"relative" , background:"none"}}>
+        <img src={xp} className='ft' alt="" width={200} style={{position:"absolute" , top:"45%" , left:"50%" , transform:"translate(-50% , -50%)"}} />
+        <Typography sx={{position:"absolute"  , left:"05%" , top:"10%" , fontSize:"20px" , color:"#fff"}}>Xpenso</Typography>
+        <Fab className='hover3'  variant='contained' sx={{position:"absolute" , bottom:"7%" , right:"10%" , background:"none !important" , color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><TbBrandNextjs/></Fab>
+        <Fab className='hover3'  variant='contained' sx={{position:"absolute" , bottom:"7%" , right:"20%" , background:"none !important" , color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><SiExpress/></Fab>
+        <Fab className='hover3'  variant='contained' sx={{position:"absolute" , bottom:"7%" , right:"30%" , background:"none !important" , color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><SiMongodb/></Fab>
+        <Fab  className='hover3' variant='contained' sx={{position:"absolute" , bottom:"7%" , right:"40%" , background:"none !important" , color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><SiMui/></Fab>
+        <Fab  className='hover3' variant='contained' sx={{position:"absolute" , bottom:"7%" , right:"50%" , background:"none !important" , color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><SiJavascript/></Fab>
+       </Paper>  
   <Paper onClick={() => {
     const url = 'https://first-talk.netlify.app/';
     window.open(url, '_blank');
@@ -91,12 +103,6 @@ window.addEventListener('scroll', handleScroll);
         <Fab  className='hover3'  variant='contained' sx={{position:"absolute" , bottom:"10%" , right:"10%" , background:"none !important", color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><FaReact/></Fab>
         <Fab className='hover3'  variant='contained' sx={{position:"absolute" , bottom:"10%" , right:"20%" ,  background:"none !important" , color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><SiMui/></Fab>
         <Fab  className='hover3' variant='contained' sx={{position:"absolute" , bottom:"10%" , right:"30%" ,  background:"none !important" , color:"#fff" , backdropFilter:"blur(2px)" , fontWeight:"700" , borderRadius:"25px" }}><SiJavascript/></Fab>
-       </Paper> 
-       <Paper className='hover3'  sx={{minWidth:"300px" , height:"17em" , borderRadius:"18px" , flexGrow:"1" , position:"relative", background:"none"}}>
-       <Skeleton variant='rounded' sx={{width:"200px" , height:"10em",position:"absolute" , top:"40%" , left:"50%" , transform:"translate(-50% , -50%)"  }}/>
-       <Skeleton variant="circular"  sx={{position:"absolute" , bottom:"5%" , right:"10%"  }}><Fab/></Skeleton>
-       <Skeleton variant="circular"  sx={{position:"absolute" , bottom:"5%" , right:"20%"  }}><Fab/></Skeleton>
-       <Skeleton variant="circular"  sx={{position:"absolute" , bottom:"5%" , right:"30%"    }}><Fab/></Skeleton>
        </Paper> 
   </Box>
   </motion.div>

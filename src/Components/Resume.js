@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import res from '../Components/Images/resume.png'
 export default function Resume() {
     const steps = [{year:"2007 - 2019" , name:"Nirmala English School" , add:"Matriculation"},{year:"2019 - 2021" , name:"St Paul's School " , add:"Intermediate"},{year:"2021 - Present" , name:"Veer Surendra Sai University Of Technology" , add:"B-Tech"},]
-    const stepsexp = [{year:"Feb(2023) - Mar(2023)" , name:"Hands-Down" , add:"Frontend Web Developer | UI/UX Designer"},{year:"Mar(2023) - Present" , name:"Graduate Us" , add:"Frontend Web Developer | UI/UX Designer"},{year:"June(2023) - Present" , name:"Wasper Tech" , add:"Frontend Web Developer"},
+    const stepsexp = [{year:"Nov(2023) - Dec(2023)" , name:"STF" , add:"Full Stack Web Developer | UI/UX Designer"},{year:"Jan(2023) - July(2023)" , name:"Graduate Us" , add:"Full Stack Web Developer | UI/UX Designer"},{year:"June(2023) - Present" , name:"Wasper Tech" , add:"Frontend Web Developer"},
 ]
 
 
