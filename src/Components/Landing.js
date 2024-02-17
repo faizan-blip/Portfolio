@@ -7,7 +7,7 @@ import {BsPersonWorkspace} from 'react-icons/bs'
 import {GiSkills} from 'react-icons/gi'
 import{MdOutlineMiscellaneousServices} from 'react-icons/md'
 import {RiProjectorFill} from 'react-icons/ri'
-import my from '../Components/Images/my.jpg'
+import my from '../Components/Images/my.jpeg'
 import Intro from '../asset/Intro'
 import About from './About'
 import Resume from './Resume'
@@ -47,7 +47,7 @@ export default function Landing() {
                 <Typography color='#fff'><img src={logo} alt="" width={100} /></Typography>
                 <Typography  color='#fff' style={{fontSize:{sm:"15px", xs:"13px"} , width:"7em"}}> <span className='typed'></span> </Typography>
             </Box>
-            <Box sx={{height:{lg:"200px" , sm:"500px" , xs:"200px"} ,minWidth:{sm:"300px" , xs:"auto"} , background:`url(${my})` , borderRadius:"15px" , backgroundSize:"cover" , backgroundPosition:"center" ,   filter: 'grayscale(100%)' , backgroundPositionY:"-20px" , backgroundRepeat:"no-repeat" }}>
+            <Box sx={{height:{lg:"200px" , sm:"500px" , xs:"200px"} ,minWidth:{sm:"300px" , xs:"auto"} , background:`url(${my})` , borderRadius:"15px" , backgroundSize:"cover" , backgroundPosition:"center" ,   filter: 'grayscale(100%)' , backgroundRepeat:"no-repeat" }}>
 
             </Box>
             <Box sx={{display:"flex" , flexDirection:"column", alignItems:"center" , marginTop:"0.6em"}}>
