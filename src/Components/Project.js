@@ -1,5 +1,5 @@
 import React , {useState} from 'react'
-import { Box ,Button, Fab, Paper, Skeleton, Typography} from '@mui/material'
+import { Box ,Button, Fab, Paper, Typography} from '@mui/material'
 import {RiProjectorFill} from 'react-icons/ri'
 import ft from '../Components/Images/lets talk.png'
 import inn from '../Components/Images/HD.png'
