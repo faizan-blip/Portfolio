@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import res from '../Components/Images/resume.png'
 export default function Resume() {
     const steps = [{year:"2007 - 2019" , name:"Nirmala English School" , add:"Matriculation"},{year:"2019 - 2021" , name:"St Paul's School " , add:"Intermediate"},{year:"2021 - 2025" , name:"Veer Surendra Sai University Of Technology" , add:"B-Tech"},]
-    const stepsexp = [{year:"Nov(2023) - Dec(2023)" , name:"STF" , add:"Full Stack Web Developer | UI/UX Designer"},{year:"Jan(2023) - July(2023)" , name:"Graduate Us" , add:"Full Stack Web Developer | UI/UX Designer"},{year:"May(2023) - July(2023)" , name:"Wasper Tech" , add:"Frontend Web Developer"},
+    const stepsexp = [{year:"Oct 25 - Present" , name:"Cognizant" , add:"Software Engineer Trainee"},{year:"Jan(2023) - July(2023)" , name:"Graduate Us" , add:"Full Stack Web Developer | UI/UX Designer"},{year:"May(2023) - July(2023)" , name:"Wasper Tech" , add:"Frontend Web Developer"},
 ]
 
 
@@ -124,9 +124,27 @@ window.addEventListener('scroll', handleScroll);
           transition={{duration:1 , ease:"easeOut"  , delay:0.5}}
           >
          <Box sx={{display:"flex" , flexDirection:"column"}}>
-           <Typography className='hover' color='#494949' sx={{fontSize:"18px" , fontWeight:"500"}}>{steps.year}</Typography>
+           <Typography className='hover' sx={{
+             fontSize:"18px" ,
+             fontWeight:"500",
+             color: steps.name === 'Cognizant' ? '#9d00ff' : '#494949',
+             animation: steps.name === 'Cognizant' ? 'blink 1.4s ease-in-out infinite' : 'none',
+             '@keyframes blink': {
+               '0%, 100%': { opacity: 1 },
+               '50%': { opacity: 0.2 },
+             },
+           }}>{steps.year}</Typography>
            <Typography color='white' sx={{fontSize:"25px" , marginTop:"0.4em"}}>{steps.name}</Typography>
-           <Typography color='#494949' sx={{fontSize:"18px" , fontWeight:"500"}}>{steps.add}</Typography>
+           <Typography sx={{
+             fontSize:"18px" ,
+             fontWeight:"500",
+             color: steps.name === 'Cognizant' ? '#9d00ff' : '#494949',
+             animation: steps.name === 'Cognizant' ? 'blink 1.4s ease-in-out infinite' : 'none',
+             '@keyframes blink': {
+               '0%, 100%': { opacity: 1 },
+               '50%': { opacity: 0.2 },
+             },
+           }}>{steps.add}</Typography>
          </Box>
          </motion.div>
 }
