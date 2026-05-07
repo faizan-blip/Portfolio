@@ -23,7 +23,7 @@ export default function About() {
   return (
   <>
   <div id='about'>
-  <Box sx={{height:"100%" , minHeight:{lg:"100vh" , xs:"100%"}, background:"#0f0f0f" , color:"#fff" , display:"flex", width:"100%" , marginTop:{xl:"5.2em",lg:"3.5em" , xs:"0em"} , flexDirection:"column" , gap:"1.5em" , padding:{lg:"0" ,xs:"3em 0.2em"}}}>
+  <Box sx={{height:"100%" , minHeight:{lg:"100vh" , xs:"100%"}, background:"transparent" , color:"#fff" , display:"flex", width:"100%" , marginTop:{xl:"5.2em",lg:"3.5em" , xs:"0em"} , flexDirection:"column" , gap:"1.5em" , padding:{lg:"0" ,xs:"3em 0.2em"}}}>
   {
     show &&
 

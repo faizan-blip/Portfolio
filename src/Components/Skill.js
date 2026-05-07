@@ -1,27 +1,39 @@
-import { Box ,Button, IconButton, Typography} from '@mui/material'
-import React , {useState} from 'react'
-import {GiSkills} from 'react-icons/gi'
-import {FaReact} from 'react-icons/fa'
-import {TbBrandNextjs,TbBrandJavascript,TbBrandMongodb,TbBrandFigma} from 'react-icons/tb'
-import {SiExpress,SiMui,SiFirebase,SiFramer} from 'react-icons/si'
-import {BsBootstrap} from 'react-icons/bs'
-import {TiHtml5 ,TiCss3} from 'react-icons/ti'
+import { Box, Button, Typography } from '@mui/material'
+import React, { useState } from 'react'
+import { FaJava, FaReact } from 'react-icons/fa'
+import { GiSkills, GiNetworkBars } from 'react-icons/gi'
+import { SiSpringboot, SiApachekafka, SiMysql, SiHtml5 } from 'react-icons/si'
+import { TbBrandMongodb, TbBrandJavascript } from 'react-icons/tb'
+import { TiCss3 } from 'react-icons/ti'
 import { motion } from 'framer-motion'
 export default function Skill() {
-  const icon =[
-    {icon:<FaReact className='hover' size={50} color='#fff'/> , per:"React-js"}, 
-    {icon:<TbBrandNextjs className='hover' size={50} color='#fff'/> , per:"Next-js"}, 
-    {icon:<SiExpress className='hover' size={50} color='#fff'/> , per:"Express-js"}, 
-    {icon:<SiFirebase className='hover' size={50} color='#fff'/> , per:"Firebase"}, 
-    {icon:<TbBrandMongodb className='hover' size={50} color='#fff'/> , per:"MongoDb"}, 
-    {icon:<TbBrandJavascript className='hover' size={50 } color='#fff'/> , per:"Javascript"}, 
-    {icon:<SiMui className='hover' size={50} color='#fff'/> , per:"Mui"}, 
-    {icon:<TbBrandFigma className='hover' size={50} color='#fff'/> , per:"Html5"},  
-    {icon:<BsBootstrap className='hover' size={50} color='#fff'/> , per:"Bootstrap"}, 
-    {icon:<SiFramer className='hover' size={50} color='#fff'/> , per:"Framer"}, 
-    {icon:<TiCss3 className='hover' size={50} color='#fff'/> , per:"Css3"},
-    {icon:<TiHtml5 className='hover' size={50}color='#fff'/> , per:"Html5"},  
+  const skills = [
+    { name: 'Java', icon: <FaJava size={40} color='#fff' /> },
+    { name: 'Spring Boot', icon: <SiSpringboot size={40} color='#fff' /> },
+    { name: 'Microservices', icon: <GiNetworkBars size={40} color='#fff' /> },
+    { name: 'Kafka', icon: <SiApachekafka size={40} color='#fff' /> },
+    { name: 'ReactJS', icon: <FaReact size={40} color='#fff' /> },
+    { name: 'SQL', icon: <SiMysql size={40} color='#fff' /> },
+    { name: 'MongoDB', icon: <TbBrandMongodb size={40} color='#fff' /> },
+    { name: 'JavaScript', icon: <TbBrandJavascript size={40} color='#fff' /> },
+    { name: 'HTML5', icon: <SiHtml5 size={40} color='#fff' /> },
+    { name: 'CSS', icon: <TiCss3 size={40} color='#fff' /> },
   ]
+
+  const skillCardSx = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: '100px',
+    border: '1px solid #494949',
+    background: 'rgba(255,255,255,0.04)',
+    minHeight: '120px',
+    width: '100%',
+    minWidth: '0',
+    padding: '1em',
+    textAlign: 'center',
+    boxSizing: 'border-box',
+  }
 
      
 const [show , setShow] = useState(false)
@@ -41,7 +53,20 @@ const handleScroll = () => {
 window.addEventListener('scroll', handleScroll);
   return (
     <div id='skill'>
-    <Box sx={{height:"100%" , minHeight:{lg:"100vh" , xs:"100%"}, color:"#fff" , display:"flex", width:"100%" , marginTop:{xl:"5.2em",lg:"3.5em" , xs:"0em"} , flexDirection:"column" , gap:"1.5em" , padding:{lg:"0" ,xs:"3em 0em"}}}>
+    <Box sx={{
+      height: '100%',
+      minHeight: { lg: '100vh', xs: '100%' },
+      color: '#fff',
+      display: 'flex',
+      width: '100%',
+      maxWidth: '1200px',
+      mx: 'auto',
+      flexDirection: 'column',
+      gap: '1.5em',
+      padding: { lg: '0', xs: '0' },
+      marginTop: { xl: '5.2em', lg: '3.5em', xs: '0em' },
+      overflowX: 'hidden',
+    }}>
     {
     show &&
    
@@ -50,7 +75,9 @@ window.addEventListener('scroll', handleScroll);
           animate={{opacity:1 , y:0}}
           transition={{duration:1 , ease:"easeOut"}}
           >
-    <Button variant='outlined' sx={{borderColor:"#494949 !important" , fontWeight:"500", color:"#fff !important" , display:"flex" , alignItems:"center" , gap:"0.5em" , height:"3em" , borderRadius:"25px" , fontSize:"17px" , width:"11em"}}> <GiSkills/> My Skills</Button>
+    <Box sx={{ width: '100%', display: 'flex', justifyContent: { xs: 'center', lg: 'flex-start' } }}>
+      <Button variant='outlined' sx={{borderColor:"#494949 !important" , fontWeight:"500", color:"#fff !important" , display:"flex" , alignItems:"center" , gap:"0.5em" , height:"3em" , borderRadius:"25px" , fontSize:"17px" , minWidth:"11em"}}> <GiSkills/> My Skills</Button>
+    </Box>
     </motion.div>
 }
 {
@@ -61,7 +88,7 @@ window.addEventListener('scroll', handleScroll);
           animate={{opacity:1 , y:0}}
           transition={{duration:1 , ease:"easeOut", delay:0.2}}
           >
-   <Typography sx={{fontWeight:"500" , fontSize:{lg:"50px", md:"45px", xs:"40px"} , width:{lg:"80%" , xs:"100%"}}} color='#fff'>My <span style={{color:"#9d00ff"}}>Advantages</span></Typography>
+   <Typography sx={{fontWeight:"500" , fontSize:{lg:"50px", md:"45px", xs:"40px"} , width:{lg:"80%" , xs:"100%"}, textAlign:{xs:'center', lg:'left'}, mx:{xs:'auto', lg:'0'}}} color='#fff'>My <span style={{color:"#9d00ff"}}>Advantages</span></Typography>
    </motion.div>
 }
 {
@@ -72,12 +99,21 @@ window.addEventListener('scroll', handleScroll);
           animate={{opacity:1 ,scale:1}}
           transition={{duration:1.5 , ease:"backOut" , delay:0.4}}
           >
-   <Box sx={{display:"flex" , gap:"1em" , width:{lg:"85%" , xs:"100%"} , alignItems:"center" , flexWrap:"wrap"}}>
+   <Box sx={{
+     display: 'grid',
+     gridTemplateColumns: { lg: 'repeat(3, minmax(0, 1fr))', md: 'repeat(3, minmax(0, 1fr))', sm: 'repeat(2, minmax(0, 1fr))', xs: 'repeat(1, minmax(0, 1fr))' },
+     gap: '1em',
+     width: '100%',
+     alignItems: 'stretch',
+     gridAutoRows: '1fr',
+   }}>
        {
-        icon.map((id ,index4)=>(
-          <Box className='hover2' key={index4} sx={{display:"flex" , flexDirection:"column" , justifyContent:"center" , alignItems:"center", borderRadius:"100px" , border:"1px solid #494949" , padding:"2em 2em" , flexGrow:{xl:"1" , xs:"1"}}}>
-            <IconButton className='hover'>{id.icon}</IconButton>
-            <Typography color='#9200ff' sx={{fontWeight:"700" , fontSize:"18px"}}>{id.per}</Typography>
+        skills.map((skill ,index4)=>(
+          <Box key={index4} sx={skillCardSx}>
+            <Box sx={{display:'flex', flexDirection:'column', alignItems:'center', gap:'0.8em'}}>
+              {skill.icon}
+              <Typography color='#fff' sx={{fontWeight:'700' , fontSize:'18px'}}>{skill.name}</Typography>
+            </Box>
           </Box>
         ))
        }
